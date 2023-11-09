@@ -3,8 +3,9 @@
 # DIY扩展二合一了，在此处可以增加插件
 # 自行拉取插件之前请SSH连接进入固件配置里面确认过没有你要的插件再单独拉取你需要的插件
 # 不要一下就拉取别人一个插件包N多插件的，多了没用，增加编译错误，自己需要的才好
-sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+sed -i '$a src-git kiddin9 https://dl.openwrt.ai/packages-23.05/x86_64/packages/' feeds.conf.default
 sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+sed -i '$a src-git openwrt_kmod https://mirrors.cloud.tencent.com/lede/snapshots/targets/x86/64/kmods/' feeds.conf.default
 
 # 后台IP设置
 export Ipv4_ipaddr="192.168.100.1"            # 修改openwrt后台地址(填0为关闭)
