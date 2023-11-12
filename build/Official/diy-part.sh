@@ -4,6 +4,7 @@
 # 自行拉取插件之前请SSH连接进入固件配置里面确认过没有你要的插件再单独拉取你需要的插件
 # 不要一下就拉取别人一个插件包N多插件的，多了没用，增加编译错误，自己需要的才好
 
+sed -i '$a src-git kiddin9 https://dl.openwrt.ai/latest/packages/x86_64/kiddin9' feeds.conf.default
 
 # 后台IP设置
 export Ipv4_ipaddr="192.168.2.2"            # 修改openwrt后台地址(填0为关闭)
@@ -62,15 +63,15 @@ export Disable_autosamba="0"                 # 去掉源码默认自选的luci-a
 export Ttyd_account_free_login="0"           # 设置ttyd免密登录(1为启用命令,填0为不作修改)
 export Delete_unnecessary_items="0"          # 个别机型内一堆其他机型固件,删除其他机型的,只保留当前主机型固件(1为启用命令,填0为不作修改)
 export Disable_53_redirection="0"            # 删除DNS强制重定向53端口防火墙规则(个别源码本身不带此功能)(1为启用命令,填0为不作修改)
-export Cancel_running="0"                    # 取消路由器每天跑分任务(个别源码本身不带此功能)(1为启用命令,填0为不作修改)
+export Cancel_running="1"                    # 取消路由器每天跑分任务(个别源码本身不带此功能)(1为启用命令,填0为不作修改)
 
 
 # 晶晨CPU系列打包固件设置(不懂请看说明)
-export amlogic_model="s905d"
-export amlogic_kernel="5.10.01_6.1.01"
-export auto_kernel="true"
-export rootfs_size="2560"
-export kernel_usage="stable"
+#export amlogic_model="s905d"
+#export amlogic_kernel="5.10.01_6.1.01"
+#export auto_kernel="true"
+#export rootfs_size="2560"
+#export kernel_usage="stable"
 
 
 
