@@ -164,6 +164,13 @@ jobs:
         ln -sf /${{ env.DIY_WORK }}/openwrt ${GITHUB_WORKSPACE}/openwrt
         cp -Rf ${GITHUB_WORKSPACE}/build ${GITHUB_WORKSPACE}/openwrt/build
         chmod -R +x ${GITHUB_WORKSPACE}/openwrt/build
+        
+    - name: Patch source code
+      run: |
+        cp 0001-Add-support-to-Xiaomi-AX3000T.patch openwrt/
+        cd openwrt
+        git apply --check 0001-Add-support-to-Xiaomi-AX3000T.patch
+        git apply 0001-Add-support-to-Xiaomi-AX3000T.patch
     
     - name: 公 告
       if: env.REPO_TOKEN
