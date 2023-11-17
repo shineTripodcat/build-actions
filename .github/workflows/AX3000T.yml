@@ -166,7 +166,9 @@ jobs:
         chmod -R +x ${GITHUB_WORKSPACE}/openwrt/build
         
     - name: Patch source code
+      if: env.REPO_TOKEN
       run: |
+        cd ${GITHUB_WORKSPACE}
         cp 0001-Add-support-to-Xiaomi-AX3000T.patch openwrt/
         cd openwrt
         git apply --check 0001-Add-support-to-Xiaomi-AX3000T.patch
