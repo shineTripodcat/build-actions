@@ -9,7 +9,7 @@
 #
 #
 
-name: Official-官方
+name: AX3000T
 on:
   workflow_dispatch:
     inputs:
